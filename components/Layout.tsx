@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { Center, Text } from "@chakra-ui/react";
+import { Center, Flex, Text } from "@chakra-ui/react";
+import ColorModeToggle from "./ColorModeToggle";
 
 interface Props {
   title: string;
@@ -27,14 +28,17 @@ const Layout = ({ title, children }: Props) => {
           mx="auto"
           className={inter.className}
         >
-          <Text
-            fontSize={{ base: "2xl", md: "4xl" }}
-            mb={{ base: 8, md: 0 }}
-            textTransform="uppercase"
-            letterSpacing="10px"
-          >
-            {title}
-          </Text>
+          <Flex>
+            <ColorModeToggle />
+            <Text
+              fontSize={{ base: "2xl", md: "4xl" }}
+              mb={{ base: 8, md: 0 }}
+              textTransform="uppercase"
+              letterSpacing="10px"
+            >
+              {title}
+            </Text>
+          </Flex>
           {children}
         </Center>
       </main>
