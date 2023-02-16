@@ -4,7 +4,7 @@ import { Center, Text } from "@chakra-ui/react";
 
 interface Props {
   title: string;
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
 const inter = Inter({ subsets: ["latin"] });
